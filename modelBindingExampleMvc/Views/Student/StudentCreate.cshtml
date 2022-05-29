@@ -1,0 +1,38 @@
+﻿@model IEnumerable<modelBindingExampleMvc.Models.Entities.Student>
+
+@{
+    ViewData["Title"] = "StudentCreate";
+}
+<form asp-action="StudentCreate" asp-controller="Student" method="post">
+
+    <input type="text" name="name" placeholder = "Name" />
+    <input type="text" name="sname" placeholder = "Sname" />
+    <input type="submit" value = "Create"/>
+
+</form>
+
+<div class="container">
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+               <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.sname</td>
+            </tr>
+            }
+
+    </tbody>
+</table>
+</div>
+
+
+
